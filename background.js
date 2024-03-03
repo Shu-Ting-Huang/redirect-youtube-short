@@ -1,18 +1,15 @@
 chrome.runtime.onInstalled.addListener(function() {
   chrome.contextMenus.create({
-    title: "Say Hello World",
+    title: "Watch Short as Regular Video",
     contexts: ["all"],
-    id: "helloWorld", // Add an ID for the context menu item
+    id: "watchShortAsRegular"
   });
 });
 
 chrome.contextMenus.onClicked.addListener(function(info, tab) {
-  if (info.menuItemId === "helloWorld") {
-    console.log("Hello World");
-    console.log(tab);
-    // chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    //   const currentTab = tabs[0];
-    //   console.log("Current URL:", tabs);
-    // });
+  if (info.menuItemId === "watchShortAsRegular") {
+    if (tab.url.startsWith("https://www.youtube.com/shorts/")) {
+      chrome.tabs.update(tab.id, {url: tab.url.replace("shorts/","watch?v=")})
+    }
   }
 });
