@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Hello World Extension",
+  "name": "Redirect Youtube Shorts to Regular Videos",
   "version": "1.0",
-  "description": "Adds 'Hello World' to the right-click menu.",
+  "description": "Adds 'Redirector' to the right-click menu.",
   "permissions": ["contextMenus"],
   "background": {
     "service_worker": "background.js"
