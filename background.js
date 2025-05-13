@@ -2,7 +2,8 @@ chrome.runtime.onInstalled.addListener(function() {
   chrome.contextMenus.create({
     title: "Watch Short as Regular Video",
     contexts: ["all"],
-    id: "watchShortAsRegular"
+    id: "watchShortAsRegular",
+    documentUrlPatterns: ["https://www.youtube.com/shorts/*"]
   });
 });
 
